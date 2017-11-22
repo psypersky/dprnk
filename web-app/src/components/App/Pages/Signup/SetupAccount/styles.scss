@@ -1,0 +1,306 @@
+@import "../../../../../styles/colors";
+@import "../../../../../styles/mediaQueries";
+
+.confirmOauth {
+  background: #f4f4f4;
+
+  .header {
+    height: 176px;
+    background-color: #25282A;
+    position: relative;
+
+    .logo {
+      a {
+        float: left;
+        margin-top: 7px;
+        margin-left: 33px;
+
+        img {
+          width: 170px;
+          height: 54px;
+        }
+      }
+    }
+
+    .ogre {
+      width: 600px;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 300px);
+    }
+  }
+
+  .message {
+    background-color: rgba(197, 22, 51, 1.0);
+    height: 61px;
+    text-align: center;
+
+    span {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 61px;
+      color: #F1F1F1;
+    }
+  }
+
+  .inner {
+    background-color: #FFFFFF;
+    height: 100%;
+    padding-top: 52px;
+
+    .constrainedContent {
+      width: 482px;
+      margin: 0 auto 0 auto;
+      position: relative;
+      right: 43px;
+      bottom: 14px;
+      height: 100%;
+
+      .background {
+
+        .backgroundText {
+          display: none;
+
+          span {
+            p {
+
+            }
+          }
+          
+        }
+
+        .photoContainer {
+          position: absolute;
+          left: 11px;
+          top: -1px;
+        }
+      }
+
+      .settingsContainer {
+        width: 302px;
+        margin: 0 0 0 auto;
+        position: relative;
+
+        h2 {
+          margin-left: 6px;
+          font-size: 20px;
+          line-height: 25px;
+          font-weight: 500;
+          color: #25282A;
+          position: absolute;
+          top: -7px;
+        }
+
+        form {
+          position: relative;
+          top: 31px;
+          right: 1px;
+
+          fieldset {
+            margin-top: 16px;
+
+            label {
+              display: block;
+              font-size: 13px;
+              font-weight: 500;
+              color: $textIputTextColor;
+            }
+
+            .inputContainer {
+              position: relative;
+
+              input[type='text'] {
+                border: 2px solid;
+                color: #444;
+                border-color: $textInputBorderColor;
+                height: 32px;
+                width: calc(100% - 46px);
+                margin-top: 5px;
+                border-radius: 6px 0 0 6px;
+                border-right: none;
+                -webkit-appearance: none;
+              }
+
+              input[name='username'] {
+                width: 100%;
+                border-right: 2px solid $textInputBorderColor;
+                border-radius: 6px;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                height: 36px;
+              }
+
+              .iconContainer {
+                width: 42px;
+                height: 32px;
+                position: absolute;
+                border-style: solid !important;
+                border-radius: 0 6px 6px 0;
+                border: 2px;
+                border-color: #b3b3b3;
+                border-left: none !important;
+                left: auto;
+                right: 0;
+                top: 5px;
+
+                i {
+                font-size: 24px;
+                color: $textInputIconColor;
+                position: absolute;
+                top: 4px;
+                left: 10px;
+                }
+              }
+            }
+          }
+
+          .innerCheckboxContainer {
+            margin: 10px auto;
+
+            label {
+              position: relative;
+              top: -25px;
+              color: $textInputBorderColor;
+
+              p {
+                width: 265px;
+                height: 33px;
+                font-family: Roboto;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 16px;
+                color: #9EA2A2;
+              }
+            }
+          }
+
+
+
+          fieldset.fieldsetError {
+
+            label {
+              color: $redRuby;
+            }
+
+            .inputContainer {
+
+              input {
+                color: $redRuby;
+                border-color: $redRuby;
+              }
+
+              p {
+                padding: 6px 0px 0px 2px;
+                color: $redRuby;
+                font-family: roboto;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+
+      .buttonsContainer {
+
+        .buttonContinue {
+          width: 156px;
+          height: 33px;
+          text-align: center;
+          font-family: Roboto;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 33px;
+          border: none;
+          border-radius: 20px;
+          padding: 0px 0 0 0;
+          display: block;
+          margin: 68px 73px 0 auto;
+          cursor: pointer;
+        }
+        a {
+          display: none;
+        }
+      }  
+    }
+  }
+
+  @media screen and (max-width: $breakBig) {
+
+    .header {
+      display: none;
+    }
+
+    .message {
+      display: none;
+    }
+
+    .inner {
+      padding: 0;
+      margin-bottom: 100px;
+
+      .constrainedContent {
+        width: 100%;
+        margin: 0 auto;
+        right: 0;
+        bottom: 0;
+
+        .background {
+          width: 100%;
+          height: 110px;
+          background-color: #25282A;
+
+          .backgroundText {
+            display: block;
+
+            p {
+              height: 33px;
+              width: 320px;
+              color: #F1F1F1;
+              font-size: 13px;
+              font-weight: 500;
+              line-height: 16px;
+              text-align: center;
+              margin: 0 auto;
+              padding-top: 12px;
+            }
+          }
+
+          .photoContainer {
+            left: 0;
+            top: 0;
+            margin: 18px auto 0 auto;
+            position: relative;
+          }
+        }
+
+        
+        .settingsContainer {
+          margin: 60px 20px 100px 20px;
+          width: auto;
+
+        }
+
+        .buttonsContainer {
+          width: 100%;
+          height: 50px;
+          position: fixed;
+          background: #f1f1f1;
+          bottom: 0;
+          display: flex;
+          justify-content: space-between;
+
+          .buttonContinue {
+            margin: auto;
+          }
+
+          a {
+            color: $textIputTextColor;
+            display: block;
+            margin: auto;
+            font-size: 16px;
+          }
+        }     
+      }
+    }
+  }
+}

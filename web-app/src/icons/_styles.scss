@@ -1,0 +1,46 @@
+//////////////////////////////////////////////// 
+//                                            // 
+//    This file is auto generated             // 
+//    DON'T MODIFY                            // 
+//    everything will be overwriten by gulp   // 
+//                                            // 
+//////////////////////////////////////////////// 
+
+
+
+@font-face { 
+  font-family: "ruby-icons"; 
+  src: url('/public/assets/fonts/ruby-icons.eot'); 
+  src: url('/public/assets/fonts/ruby-icons.eot?#iefix') format('eot'), 
+    url('/public/assets/fonts/ruby-icons.woff2') format('woff2'), 
+    url('/public/assets/fonts/ruby-icons.woff') format('woff'), 
+    url('/public/assets/fonts/ruby-icons.ttf') format('truetype'), 
+    url('/public/assets/fonts/ruby-icons.svg#ruby-icons') format('svg'); 
+} 
+ 
+%icon-styles { 
+  font-family: "ruby-icons"; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: normal; 
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option) 
+  text-decoration: none; 
+  text-transform: none; 
+}
+
+
+.account:before {  @extend %icon-styles;  content: ""; }
+.comment_outline:before {  @extend %icon-styles;  content: ""; }
+.email_outline:before {  @extend %icon-styles;  content: ""; }
+.eye:before {  @extend %icon-styles;  content: ""; }
+.facebook:before {  @extend %icon-styles;  content: ""; }
+.google:before {  @extend %icon-styles;  content: ""; }
+.lock:before {  @extend %icon-styles;  content: ""; }
+.magnify:before {  @extend %icon-styles;  content: ""; }
+.map_marker:before {  @extend %icon-styles;  content: ""; }
+.thumb_up:before {  @extend %icon-styles;  content: ""; }
+.twitter:before {  @extend %icon-styles;  content: ""; }
+.upload:before {  @extend %icon-styles;  content: ""; }
+.web:before {  @extend %icon-styles;  content: ""; }

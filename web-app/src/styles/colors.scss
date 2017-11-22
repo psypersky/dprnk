@@ -1,0 +1,73 @@
+//-----------New colors-----------//
+
+$redRuby: #C8102E;
+
+$formButtonColor: #DB333F;
+$formButtonColorHover: #ba1e26;
+$formButtonColorActive: #a01920;
+$formButtonColorDisabled: grey;
+
+$textInputBorderColor: #B3B3B3;
+$textInputIconColor: #9EA2A2;
+$textIputTextColor: #9EA2A2;
+$textInputColor: #25282a;
+$textInputColorDisabled: #ddd;
+
+$separatorBorderColor: #C7C9C7;
+
+$textColorBlack: #54585A;
+$textColorRed: #C60034;
+$textColorGrey: #9EA2A2;
+
+$topNoticeBlue: #7bbb5e;
+$topNoticeGreen: #0a770a;
+$topNoticeRed: #e7323b;
+
+//-----------Old colors-----------//
+
+// colors by name
+// $brilliantWhite: #f2f2f2;
+// $monza: #E4002B;
+// $tamarillo: #A6192E;
+// $white: #ffffff;
+
+//colors by utility
+
+// $appBackground: $white;
+// $red: #cb2129;
+
+// $formButtonColorCancel: rgba(0, 0, 0, 0.3);
+// $formLightBackground: #f1f1f1;
+
+// $labelColor: #9ea2a2;
+
+// $noticeBlue: #7bbb5e;
+// $noticeGreen: #7bbb5e;
+// $noticeRed: #e7323b;
+
+// -------------------- mixins --------------------
+
+@mixin buttonHighligth() {
+  // @include gradientBackground($monza, $redRuby);
+
+  &:hover {
+    // background: $monza;
+  }
+
+  &:disabled {
+    // background: $monza;
+    cursor: normal;
+  }
+
+  &.active {
+    // background: $tamarillo;
+  }
+}
+
+@mixin gradientBackground($initial, $final) {
+  background: $initial; /* Old browsers */
+  background: -moz-linear-gradient(top, $initial 0%, $final 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $initial 0%,$final 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $initial 0%,$final 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$initial', endColorstr='$final',GradientType=0 ); /* IE6-9 */
+}

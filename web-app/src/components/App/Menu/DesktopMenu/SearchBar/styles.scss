@@ -1,0 +1,90 @@
+.searchBar {
+  float: left;
+  padding-left: 40px;
+  line-height: 59px;
+  width: 44%;
+
+  @media screen and (max-width: 900px) {
+    padding-left: 20px;
+    width: 38%;
+  }
+  
+  .inputWrapper, .tokenizedWrapper {
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+    
+    i {
+      position: absolute;
+      font-size: 30px;
+      top: 8px;
+      left: 5px;
+      line-height: 30px;
+    }
+  }
+  
+  .inputWrapper {
+    display: inline-block;
+    vertical-align: middle;
+    height: 43px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    
+    input {
+      background-color: transparent;
+      display: block;
+      height: 100%;
+      margin: 0;
+      margin-left: 30px;
+      padding: 0;
+      border: 0;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+      padding-left: 10px;
+    }
+  }
+  
+  .tokenizedWrapper {
+    background-color: white;
+    display: inline-block;
+    vertical-align: middle;
+    height: 43px;
+    width: 100%;
+    
+    ul {
+      display: block;
+      height: 43px;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 16px;
+      padding: 0;
+      margin: 0;
+      margin-left: 40px;
+      border: 0;
+      
+      li {
+        display: block;
+        float: left;
+        height: 43px;
+        
+        span {
+          &:first-child {
+            padding-left: 10px;
+          }
+          line-height: 32px;
+          height: 32px;
+          display: block;
+          background-color: #E4002B;
+          margin-top: 5px;
+          margin-left: 5px;
+          border-radius: 2px;
+          color: #F1F1F1;
+          padding: 0px 12px;
+        }
+      }
+    }
+  }
+}

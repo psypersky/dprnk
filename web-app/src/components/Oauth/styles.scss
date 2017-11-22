@@ -1,0 +1,102 @@
+.button {
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  width: 310px;
+  height: 42px;
+  margin: 0 auto 11px auto;
+  padding-left: 25px;
+  position: relative;
+
+  span {
+    padding-left: 10px;
+  }
+}
+
+.facebook {
+  background-color: #3B5998;
+  padding-left: 16px;
+
+  i {
+    font-size: 24px;
+    position: absolute;
+    top: 9px;
+    left: 59px;
+  }
+  &:hover {
+    background-color: #334d84;
+  }
+  &:active {
+    background-color: #2e4679;
+  }
+}
+
+.google {
+  background-color: #DB333F;
+  padding-left: 25px;
+
+  i {
+    font-size: 25px;
+    position: absolute;
+    left: 69px;
+    top: 8px;
+  }
+  &:hover {
+    background-color: #c54332;
+  }
+  &:active {
+    background-color: #b43e2e;
+  }
+}
+
+.twitter {
+  background-color: #45a2e1;
+  padding-left: 23px;
+
+  i{
+    font-size: 24px;
+    position: absolute;
+    left: 70px;
+    top: 8px;
+  }
+  &:hover {
+    background-color: #3f93cc;
+  }
+  &:active {
+    background-color: #3a86ba;
+  }
+}
+
+.twitter:disabled {
+  background-color: grey;
+}
+
+@media screen and (max-width: 340px) {
+
+  .button {
+    width: 280px;
+  }
+
+  .facebook {
+    i {
+      left: 44px;
+    }
+  }
+
+  .google {
+    i {
+      left: 54px;
+    }
+  }
+
+  .twitter {
+    i {
+      left: 55px;
+    }
+  }
+}

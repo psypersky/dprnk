@@ -1,0 +1,260 @@
+@import "../../../../../styles/colors";
+@import "../../../../../styles/mediaQueries";
+
+.wrapper {
+  height: inherit;
+
+  .inner {
+    width: 360px;
+    background: white;
+    border-radius: 6px;
+    margin: 131px auto 0px auto;
+
+
+    .formErrors {
+      margin: 0 0 20px 0;
+      font-size: 1em;
+      font-weight: normal;
+      text-align: left;
+      color: #f55;
+      border-radius: 8px;
+
+      h3 {
+        text-align: center;
+        font-size: 24px;
+        padding-top: 10px;
+      }
+
+      ul {
+        font-size: 1.5em;
+
+        li {
+          padding: 10px 5px;
+
+          a {
+            color: inherit;
+          }
+        }
+      }
+    }
+
+    .formContainer {
+      float: none;
+      width: 310px;
+      margin: 0 0 0 25px;
+
+      span {
+        display: inline-block;
+        margin: 0 0 4px 147px;
+        font-size: 1.4em;
+        line-height: 1;
+        color: $textInputIconColor;
+        padding: 0 0 9px 3px;
+      }
+
+      form {
+        fieldset {
+          margin: 0 0 9px 0;
+
+          .inputContainer {
+            position: relative;
+
+            .iconContainer {
+              width: 42px;
+              height: 40px;
+              position: absolute;
+              border-style: solid !important;
+              border-radius: 6px 0px 0px 6px;
+              border: 2px;
+              border-color: $textInputBorderColor;
+              border-right: none !important;
+
+              i {
+                font-size: 23px;
+                color: $textInputIconColor;
+                position: absolute;
+                top: 9px;
+                left: 7px;
+                }
+            }
+
+            input {
+              width: 260px;
+              height: 27px;
+              position: relative;
+              float: right;
+              border-radius: 0px 6px 6px 0px;
+              font: 16px "Helvetica Neue", helvetica, sans-serif;
+              padding: 8px 10px 5px 6px;
+              margin-right: 10px;
+              color: #444;
+              outline: none;
+              border-left: none !important;
+              left: 10px;
+              border: 2px solid $textInputBorderColor;
+              -webkit-appearance: none;
+            }
+          }
+
+          .inputContainer.inputError {
+            .iconContainer {
+              border-color: $redRuby;
+              color: $redRuby;
+
+              i {
+                color: $redRuby
+              }
+            }
+
+            input {
+              border-color: $redRuby;
+              color: $redRuby;
+            }
+          }
+
+          p {
+            padding: 48px 0px 0px 10px;
+            color: red;
+            font-family: roboto;
+            font-weight: 500;
+          }  
+        }
+
+
+        button {
+          font-size: 16px;
+          text-align: center;
+          width: 156px;
+          height: 33px;
+          font-weight: 500;
+          line-height: 33px;
+          border: none;
+          border-radius: 20px;
+          padding: 0 0 0 0;
+          display: block;
+          margin: 25px auto;
+        }
+
+      }
+    }
+
+    .socialAuthContainer {
+      position: relative;
+      margin: 39px 0 0 0;
+
+      h2 {
+        width: 359px;
+        height: 20px;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 20px;
+        color: #25282A;
+        padding: 16px 0;
+        position: relative;
+        top: 2px;
+        left: 1px;
+
+      }
+    }
+  }
+  .alreadyAMember {
+    clear: both;
+    padding: 0 0 20px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 300px;
+    height: 17px;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #C8102E;
+    display: block;
+    margin: 0 auto;
+
+    a {
+      color: $formButtonColor;
+
+    }
+  }
+
+  @media screen and (max-width: $breakBig) {
+    height: 100%;
+
+    .inner {
+      margin: 0;
+      border-radius: 0;
+      height: 100%;
+      width: 100%;
+      overflow: scroll;
+
+      .socialAuthContainer {
+        padding: 0;
+        height: auto;
+        margin: 0 auto;
+
+        h2 {
+          width: 310px;
+          top: 0px;
+          left: 0px;
+          margin: 0 auto;
+        }
+      }
+
+      .formContainer {
+        margin: 0 auto;
+
+        span {
+          padding: 0 0 11px 0;
+          display: block;
+          text-align: center;
+          margin: 0;
+        }
+      }
+
+    }
+  }
+
+  @media screen and (max-width: $breakSmall) {
+
+    .inner {
+
+      .socialAuthContainer {
+        width: 280px;
+        padding: 0;
+
+        h2 {
+          width: 280px;
+          top: 0px;
+          left: 0px;
+          margin: 0 auto;
+        }
+      }
+
+      .formContainer {
+        width: 280px;
+
+        span {
+          display: block;
+          text-align: center;
+          margin: 0;
+        }
+
+        form {
+
+          fieldset {
+
+            .inputContainer {
+
+              input {
+                width: 230px;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+}

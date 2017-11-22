@@ -1,0 +1,113 @@
+@import '../../../styles/colors';
+@import '../../../styles/mediaQueries';
+
+.profilePhoto {
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
+  background-color: rgba(241, 241, 241, 1.0);
+  position: relative;
+  cursor: pointer;
+  margin: 0 auto;
+
+  .profilePhotoMargin {
+    height: 113px;
+    width: 113px;
+    border: 2px dashed #9EA2A2;
+    border-radius: 50%;
+    position: absolute;
+    top: 5.5px;
+    left: 5.5px;
+
+    i:first-child {
+      position: absolute;
+      left: 39px;
+      top: 20px;
+      font-size: 34px;
+      color: #9EA2A2;
+    }
+
+    span:nth-child(2) {
+      position: absolute;
+      top: 58px;
+      left: 38px;
+      color: #9EA2A2;
+      font-size: 13px;
+    }
+
+    span:nth-child(3) {
+      position: absolute;
+      top: 74px;
+      left: 40px;
+      color: #9EA2A2;
+      font-size: 13px;
+    }
+  }
+
+  .dropZone {
+    color: $textColorGrey;
+  }
+
+  .clickToUpload {
+    color: $textColorGrey;
+  }
+
+  .profilePhotoNoMargin {
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      height: 128px;
+      width: 128px;
+    }
+  }
+}
+
+@media screen and (max-width: $breakBig) {
+
+  .profilePhoto {
+    height: 90px;
+    width: 90px;
+
+    .profilePhotoMargin {
+      height: 78px;
+      width: 78px;
+      top: 3.5px;
+      left: 4px;
+      margin: auto;
+
+      i:first-child {
+        left: 24px;
+        top: 8px;
+        font-size: 30px;
+      }
+
+      span:nth-child(2) {
+        top: 38px;
+        left: 24px;
+        font-size: 10px;
+      }
+
+      span:nth-child(3) {
+        top: 49px;
+        left: 25px;
+        color: #9EA2A2;
+        font-size: 10px;
+      }
+    }
+
+    .profilePhotoNoMargin {
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        height: 90px;
+        width: 90px;
+      }
+    }
+  }
+}

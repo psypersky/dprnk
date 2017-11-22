@@ -1,0 +1,142 @@
+@import '../../../../styles/colors';
+
+.wrapper {
+  width: 100%;
+  height: 59px;
+  background: rgba(47,47,47,0.98);
+  position: fixed;
+  z-index: 999;
+
+  .inner {
+    margin: 0 auto;
+    padding: 0 10px 0 30px;
+
+    @media screen and (max-width: 900px) {
+      padding: 0 10px 0 10px;
+    }
+
+    /** Logo **/
+    .logo {
+      float: left;
+      padding: 0 20px 0 0;
+
+      @media screen and (max-width: 900px) {
+        padding: 0;
+      }
+
+      a {
+        display: block;
+        width: 170px;
+        height: 59px;
+        background-image: url(/public/logo/logo-text-white.svg);
+        background-size: 170px 39px;
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        transition: opacity 0.2s ease;
+
+        img {
+          height: 0;
+        }
+      }
+    }
+
+    .nav {
+      > li {
+        float: left;
+        font-size: 14px;
+        line-height: 1;
+
+        > a {
+          display: block;
+          height: 59px;
+          padding: 0 10px;
+          line-height: 59px;
+          text-decoration: none;
+          color: #999;
+        }
+      }
+
+      li.profile {
+        padding-right: 200px; //TEMP
+        float: right;
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      li.upload {
+        float: right;
+
+        a {
+          color: white;
+          height: 32px;
+          line-height: 32px;
+          margin-top: 12px;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    /** Logged-in Menu **/
+    .loggedInWrapper {
+
+      .profileButton {
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        color: #F1F1F1;
+        background: none;
+        border: none;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        margin-top: 20px;
+        margin-right: 35px;
+      }
+
+      .uploadButton {
+        width: 156px;
+        height: 33px;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 33px;
+        border-radius: 20px;
+        padding: 0px 0 0 0;
+        cursor: pointer;
+        float: right;
+        margin-top: 13px;
+        margin-right: 36px;
+      }
+    }
+
+    
+    /** Logged-out Menu **/
+    .loggedOutWrapper {
+      float: right;
+      margin-right: 25px;
+
+      @media screen and (max-width: 900px) {
+        margin-right: 0;
+      }
+
+      .createAccountButton {
+        display: inline-block;
+        height: 59px;
+        line-height: 59px;
+        font-size: 16px;
+        margin-right: 30px;
+        font-weight: 500;
+      }
+      
+      .signInButton {
+        display: inline-block;
+        padding: 0 20px;
+        border-radius: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 33px;
+      }
+    }
+  }
+}

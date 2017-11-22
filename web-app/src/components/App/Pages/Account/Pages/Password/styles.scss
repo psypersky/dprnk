@@ -1,0 +1,142 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/mediaQueries';
+
+.wrapper {
+
+  .form {
+    width: 302px;
+    margin-left: 136px;
+    margin-top: 50px;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #25282A;
+    }
+
+    fieldset {
+      margin-top: 16px;
+
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #54585A;
+      }
+
+      .inputContainer {
+        position: relative;
+
+        input[type='password'] {
+          border: 2px solid;
+          color: #444;
+          border-color: $textInputBorderColor;
+          height: 32px;
+          width: calc(100% - 46px);
+          margin-top: 5px;
+          border-radius: 6px 0 0 6px;
+          border-right: none;
+          -webkit-appearance: none;
+          padding: 0;
+        }
+
+        .iconContainer {
+          width: 42px;
+          height: 32px;
+          position: absolute;
+          border-style: solid !important;
+          border-radius: 0 6px 6px 0;
+          border: 2px;
+          border-color: #b3b3b3;
+          border-left: none !important;
+          left: auto;
+          right: 0;
+          top: 5px;
+
+          i {
+          font-size: 24px;
+          color: $textInputIconColor;
+          position: absolute;
+          top: 4px;
+          left: 10px;
+          }
+        }
+      }
+
+      .inputContainer.inputError {
+        label {
+          color: $redRuby;
+        }
+        .iconContainer {
+          border-color: $redRuby;
+          color: $redRuby;
+
+          i {
+            color: $redRuby;
+          }
+        }
+
+        input {
+          border-color: $redRuby;
+          color: $redRuby;
+        }
+      }
+
+      p {
+        padding: 5px 0 0 0;
+        color: $redRuby;
+        font-family: roboto;
+        font-weight: 500;
+      }
+    }
+
+    .submitContainer {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      .buttonSubmit {
+        width: 156px;
+        height: 33px;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 33px;
+        border: none;
+        border-radius: 20px;
+        padding: 0;
+        display: block;
+        cursor: pointer;
+      }
+
+      .buttonCancel {
+        color: $textIputTextColor;
+        margin: auto;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakBig) {
+
+    .form {
+      width: 100%;
+      margin: 50px auto;
+      max-width: 600px;
+
+      h2 {
+        margin: 0 20px;
+      }
+
+      fieldset {
+        margin: 16px 20px 0 20px;
+      }
+
+      .submitContainer {
+        margin: 30px 20px;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,26 @@
+
+.menu {
+  height: 59px;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+  }
+  .mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}

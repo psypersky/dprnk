@@ -1,0 +1,176 @@
+@import "../../../../../styles/colors";
+@import "../../../../../styles/mediaQueries";
+.wrapper {
+  background: #f4f4f4;
+
+  .header {
+      height: 176px;
+      background-color: #25282A;
+      position: relative;
+      
+    a {
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      color: #F1F1F1;
+      float: right;
+      text-decoration: none;
+      margin-right: 50px;
+      margin-top: 20px;
+    }
+
+
+    .logo {
+      a {
+        float: left;
+        margin-top: 7px;
+        margin-left: 33px;
+
+        img {
+          width: 170px;
+          height: 54px;
+        }
+      }
+    }
+
+    .ogre {
+      width: 600px;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 300px);
+    }
+  }
+
+  .message {
+    background-color: rgba(197, 22, 51, 1.0);
+    height: 61px;
+    text-align: center;
+
+    a {
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 500;
+      color: #F1F1F1;
+      float: left;
+      margin-top: 22px;
+      margin-left: 55px;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 61px;
+      color: #F1F1F1;
+      margin-right: 90px;
+    }
+  }
+
+  .inner {
+
+    .confirmationMessage {
+      padding: 50px 180px;
+      text-align: center;
+      background: #fff;
+      border-radius: 10px;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: -.01em;
+        padding-bottom: 20px;
+
+        p {
+          margin: 20px 0 0 0;
+          font-size: 18px;
+          line-height: 1.5;
+          color: #000;
+        }
+      }
+
+      h3 {
+        font-family: Roboto;
+        font-size: 16px;
+        text-align: center;
+        line-height: 20px;
+        color: #54585A;
+        -webkit-text-size-adjust: 100%;
+
+        a {
+          text-decoration: none;
+          color: #54585A;
+        }
+      }
+
+      p {
+        margin: 35px 0 0 0;
+        font-size: 18px;
+        line-height: 1.5;
+        color: #777;
+
+        img {
+          height: 160px;
+          width: 160px;
+        }
+      }
+    }
+  }
+
+  .buttonsContainer {
+    display: none;
+  }
+
+  @media screen and (max-width: $breakBig) {
+    .header {
+      display: none;
+    }
+
+    .message {
+      display: none;
+    }
+
+    .inner {
+
+      .confirmationMessage {
+        padding: 20px;
+
+        p {
+          img {
+            height: 120px;
+            width: 120px;
+          }
+        }
+      }
+    }
+
+    .buttonsContainer {
+      width: 100%;
+      height: 50px;
+      position: fixed;
+      background: #f1f1f1;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: $textIputTextColor;
+        display: block;
+        margin: auto;
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakMedium) {
+
+    .inner {
+
+      .confirmationMessage {
+
+        h3 {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}

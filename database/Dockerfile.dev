@@ -1,0 +1,21 @@
+FROM postgres:10.0
+
+# Enable remote connections to the database
+ADD setup-remote-connections.sh /docker-entrypoint-initdb.d/setup-remote-connections.sh
+RUN chmod 755 /docker-entrypoint-initdb.d/setup-remote-connections.sh
+
+# Create role DB_USER, database DB_NAME, assign priviledges
+ADD create-database.sh /docker-entrypoint-initdb.d/
+RUN chmod 755 /docker-entrypoint-initdb.d/create-database.sh
+
+# Create tables and fixed data
+ADD schema.sql /usr
+RUN chmod 755 /usr/schema.sql
+ADD setup-database.sh /docker-entrypoint-initdb.d/
+RUN chmod 755 /docker-entrypoint-initdb.d/setup-database.sh
+
+# Add development data
+ADD development-data.sql /usr
+RUN chmod 755 /usr/development-data.sql
+ADD add-dev-data.sh /docker-entrypoint-initdb.d/
+RUN chmod 755 /docker-entrypoint-initdb.d/add-dev-data.sh

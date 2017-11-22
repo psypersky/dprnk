@@ -1,0 +1,72 @@
+.wrapper {
+  width: 100%;
+  height: 56px;
+  background: rgba(47,47,47,0.98);
+
+  .inner {
+    margin: 0 auto;
+    padding: 0 10px 0 30px;
+
+    .logo {
+      float: left;
+      padding: 0 20px 0 0;
+
+      a {
+        display: block;
+        width: 88.61px;
+        height: 56px;
+        background-image: url(/public/logo/logo-white.png);
+        background-size: 88.61px 19px;
+        background-repeat: no-repeat;
+        background-position: 0 50%;
+        transition: opacity 0.2s ease;
+
+        img {
+          height: 0;
+        }
+      }
+    }
+
+    .nav {
+      > li {
+        float: left;
+        font-size: 14px;
+        line-height: 1;
+
+        > a {
+          display: block;
+          height: 56px;
+          padding: 0 10px;
+          line-height: 56px;
+          text-decoration: none;
+          color: #999;
+        }
+      }
+
+      li.profile {
+        padding-right: 200px; //TEMP
+        float: right;
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      li.upload {
+        float: right;
+
+        a {
+          color: white;
+          height: 32px;
+          line-height: 32px;
+          margin-top: 12px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    display: none;
+  }
+}

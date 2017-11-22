@@ -1,0 +1,107 @@
+.shot {
+  width: 100%;
+  height: 309px;
+  float: left;
+  margin: 0 15px 40px 15px;
+
+  .shotImg {
+    width: 100%;
+  }
+
+  .infoCard {
+    height: 45px;
+
+    .userInfo {
+      float: left;
+      margin-top: 6px;
+
+      .userPhoto {
+        border-radius: 50%;
+        overflow: hidden;
+        float: left;
+        width: 35px;
+        height: 35px;
+
+        img {
+          width: 35px;
+        }
+      }
+
+      .paintedByBox {
+        float: left;
+        line-height: 45px;
+
+        span:first-child {
+          display: block;
+          line-height: 13px;
+          font-size: 13px;
+          padding: 6px 0 0px 6px;
+        }
+
+        span:nth-child(2) {
+          display: block;
+          line-height: 10px;
+          padding: 4px 0 6px 6px;
+          color: rgba(200,16,46,1);
+          font-weight: 500;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .statsInfo {
+      float: right;
+      line-height: 45px;
+      font-size: 14px;
+      color: #9EA2A2;
+
+      .viewsContainer, .likesContainer, .commentsContainer {
+        float: left;
+        margin-right: 10px;
+
+        span:first-child {
+          line-height: 45px;
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+
+        i {
+          font-size: 20px;
+          line-height: 45px;
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        .statsBorder {
+          border-right: 1px solid #E2E2E2;
+
+          &::after {
+            content: "\00a0";
+          }
+        }
+      }
+
+      .viewsContainer {
+
+        i {
+          padding-top: 3px;
+        }
+      }
+
+      .likesContainer {
+
+        i {
+          padding-top: 2px;
+        }
+      }
+
+      .commentsContainer {
+        margin-right: 0;
+
+        i {
+          padding-top: 3px;
+        }
+      }
+    }
+  }
+}

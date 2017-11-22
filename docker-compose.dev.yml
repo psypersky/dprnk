@@ -1,0 +1,51 @@
+version: "3.3"
+
+services:
+
+  # server for rendering and static file serving
+  web-app: # name of the service
+    image: sfb-web-app-image # Name the build image with this name
+    container_name: sfb-web-app-container # the container will be accesible in the network by the same host name
+    build:
+      context: ./sfb-web-app # specify the directory of the Dockerfile
+      dockerfile: Dockerfile.dev # the name of the Dockerfile
+    volumes:
+      - type: "bind" # bind the files on the host with the docker files, updates on host updates docker files too
+        source: ./sfb-web-app # Hosts source of mount
+        target: /usr/app/src # the path in the container where the volume will be mounted
+      - "/usr/app/src/node_modules" # This will hide the node_modules of the host and give us a place to have the machine's node_modules
+    ports:
+      - "4000:4000" # specify port forewarding
+    env_file:
+      - ./env/.dev.env
+    stdin_open: true # Keep STDIN open even if not attached
+    tty: true # Allocate a pseudo-tty
+
+  api: # name of the service
+    image: sfb-api-image # Name the build image with this name
+    container_name: sfb-api-container # the container will be accesible in the network by the same host name
+    build:
+      context: ./sfb-api # specify the directory of the Dockerfile
+      dockerfile: Dockerfile.dev # the name of the Dockerfile
+    volumes:
+      - type: "bind"
+        source: ./sfb-api # Hosts source of mount
+        target: /usr/app/src # the path in the container where the volume will be mounted
+      - "/usr/app/src/node_modules" # This will hide the node_modules of the host and give us a place to have the machine's node_modules
+    ports:
+      - "3000:3000" # specify port forewarding
+    env_file:
+      - ./env/.dev.env
+    stdin_open: true # Keep STDIN open even if not attached
+    tty: true # Allocate a pseudo-tty
+
+  database:
+    image: sfb-database-image
+    container_name: sfb-database-container
+    build:
+      context: ./sfb-database
+      dockerfile: Dockerfile.dev
+    env_file:
+      - ./env/.dev.env
+    ports:
+      - "5433:5432" # specify port fordwarding

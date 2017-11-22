@@ -1,0 +1,46 @@
+{
+	"name": "sfb-web-app",
+	"version": "1.0.0",
+	"description": "This is where the code of the web app client is, here we are going to code or app and when finished build it for production.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"hyp-dev": "env $(cat env/.dev.env | grep -v ^# | xargs) nodemon ./render-server/hypernova.js --exec babel-node",
+		"web-dev": "env $(cat env/.dev.env | grep -v ^# | xargs) nodemon ./render-server/server.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@cerebral/react": "^2.5.0",
+		"babel-core": "6.26.0",
+		"babel-loader": "7.1.2",
+		"babel-polyfill": "6.26.0",
+		"babel-register": "^6.26.0",
+		"cerebral": "^3.5.0",
+		"hypernova": "^2.1.3",
+		"hypernova-client": "^1.1.0",
+		"hypernova-react": "^2.0.0",
+		"koa": "^2.4.1",
+		"koa-bodyparser": "^4.2.0",
+		"koa-mount": "^3.0.0",
+		"koa-router": "^7.3.0",
+		"koa-static": "^4.0.2",
+		"lodash": "^4.17.4",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.1",
+		"webpack-dev-middleware": "^1.12.0",
+		"winston": "^2.4.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-es2016": "^6.24.1",
+		"babel-preset-es2017": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"koa-convert": "^1.2.0",
+		"koa-webpack-dev-middleware": "^2.0.2",
+		"webpack": "^3.8.1"
+	}
+}

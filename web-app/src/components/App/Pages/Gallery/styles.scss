@@ -1,0 +1,296 @@
+@import 'app/styles/colors';
+
+.wrapper {
+  height: 100%;
+  position: relative;
+
+  .filtersContainer {
+    background-color: rgba(241,241,241,1);
+    position: fixed;
+    top: 59px;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+
+    .filtersContent {
+      padding: 45px 0 0 30px;
+
+      fieldset {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 16px;
+          font-weight: 500;
+          padding-bottom: 10px;
+          color: #54585A;
+        }
+
+        :global .Select {
+          width: 240px;
+          height: 33px;
+
+          &.is-open .Select-control {
+            outline-width: 0px;
+            background: rgb(255, 255, 255);
+            // padding-top: 30px;
+            margin: 0;
+          }
+
+          .Select-control {
+            @include gradientBackground(#FDFDFD, #EBECEC);
+
+            box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 2px inset;
+            color: rgb(51, 51, 51);
+            font-size: 16px;
+            vertical-align: middle;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            border-width: initial;
+            border-image: initial;
+            border-radius: 6px;
+            width: 240px;
+            height: 33px;
+            border: solid 2px #9EA2A2;
+
+            .Select-value-label, &.is-pseudo-focused .Select-value-label {
+              color: #54585A !important;
+            }
+
+            .Select-placeholder {
+              color: $textInputBorderColor;
+            }
+          }
+        }
+
+        &:nth-child(1), &:nth-child(2) {
+          margin-top: 20px;
+
+          label {
+            font-size: 16px;
+            font-weight: 500;
+            padding-bottom: 10px;
+            color: #54585A;
+          }
+        }
+
+        &.submitSet {
+          text-align: center;
+          display: table;
+
+          .button1 {
+            font-size: 16px;
+            width: 320px;
+            height: 50px;
+            margin-right: 38px;
+            border-radius: 45px;
+            margin-top: 25px;
+          }
+
+          .button2 {
+            color: $textIputTextColor;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            font-size: 16px;
+          }
+
+          p {
+            color: $textIputTextColor;
+            font-size: 13px;
+            margin: 15px 94px 0 0;
+
+            a {
+              color: inherit;
+            }
+          }
+        }
+
+
+        textarea {
+          border: 2px solid #B3B3B3;
+          border-radius: 6px;
+          font: 13px "Roboto", Helvetica, Arial, sans-serif;
+          padding: 10px;
+          margin: 0;
+          color: #444;
+          outline: none;
+          width: 396px;
+          height: 126px;
+        }
+      }
+
+      .otherFiltersContainer {
+        margin: 30px 0 20px 0;
+
+        h3 {
+          font-size: 16px;
+          font-weight: 500;
+          color: #54585A;
+          padding-bottom: 10px;
+        }
+
+        .radioButtonsContainer {
+          display: flex;
+          flex-direction: column;
+
+          .rButton {
+            padding-bottom: 5px;
+            height: 17px;
+
+            input[type="radio"] {
+              position: absolute;
+              left: -9999px;
+
+              & + label {
+                position: relative;
+                padding-left: 24px;
+                padding-top: 4px;
+                font-size: 13px;
+
+                &:before, &:after {
+                  position: absolute;
+                  content: '';
+                  display: block;
+                  left: 0;
+                }
+              }
+            }
+
+            input[type="radio"] {
+              & + label {
+                &:before {
+                  width: 12px;
+                  height: 12px;
+                  top: 4px;
+                  border: 2px solid #9EA2A2;
+                  border-radius: 50%;
+                }
+              }
+            }
+
+            input[type="radio"] + label:hover, input[type="radio"]:checked + label {
+              &:after {
+                background: #c6c6c6;
+                width: 8px;
+                height: 8px;
+                margin-top:0;
+                top: 8px;
+                left: 4px;
+                border-radius: 50%;
+              }
+            }
+
+            input[type="radio"]:checked + label {
+              &:before {
+                border-color: #9EA2A2;
+              }
+              &:after {
+                background: #9EA2A2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .galleryContainer {
+    padding-top: 50px;
+    margin-left: 330px;
+    width: 100%;
+    height: 100%;
+
+    .shots {
+      .shotListEl {
+        width: 100%;
+        height: 309px;
+        float: left;
+        margin: 0 15px 40px 15px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 2000px) {
+
+    .galleryContainer {
+      margin-left: 337px;
+      width: auto;
+
+      .shots {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        .shotListEl {
+          width: calc(25% - 30px);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1592px) {
+
+    .galleryContainer {
+      margin-left: 337px;
+      width: auto;
+
+      .shots {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        .shotListEl {
+          width: calc(33.333% - 30px);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1283px) {
+
+    .galleryContainer {
+      margin-left: 337px;
+      width: auto;
+
+      .shots {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 0 auto;
+        max-width: 800px;
+
+        .shotListEl {
+          width: calc(50% - 30px);
+          max-width: 350px;
+          margin: 0 auto;
+          padding: 0 15px;
+
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 973px) {
+
+    .galleryContainer {
+      margin-left: 337px;
+      width: auto;
+
+      .shots {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        .shotListEl {
+          min-width: 350px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

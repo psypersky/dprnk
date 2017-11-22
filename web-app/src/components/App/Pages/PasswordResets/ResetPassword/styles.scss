@@ -1,0 +1,278 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mediaQueries';
+
+.wrapper {
+  height: 100%;
+  color: #999;
+
+
+  .inner {
+    margin: 0 auto;
+    width: 600px;
+    padding: 60px 0;
+
+    h2 {
+      margin-top: 15px;
+      color: #000;
+      font-family: Roboto;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      line-height: 25px;
+    }
+
+    p {
+      margin: 1.5em 0 0 0;
+      font-family: Roboto;
+      font-size: 16px;
+      text-align: center;
+      line-height: 20px;
+      color: #54585A;
+      font-weight: 400;
+      padding-top: 20px;
+      -webkit-appearance: none;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .lockContainer {
+      text-align: center;
+      height: 166px;
+      width: 166px;
+      border-radius: 50%;
+      background-color: #25282A;
+      position: relative;
+      margin-left: 217px;
+      margin-top: 35px;
+
+      img {
+        text-align: center;
+        margin-top: 27px;
+        height: 99px;
+        width: 71px;
+      }
+    }
+
+    .formContainer {
+      margin: 0px 0 0 0;
+      position: relative;
+      text-align: center;
+
+      form {
+
+        fieldset {
+
+          .inputContainer {
+            padding-top: 40px;
+            position: relative;
+            width: 310px;
+            text-align: center;
+            margin: 0 auto;
+            height: 110px;
+
+            .iconContainer {
+              width: 42px;
+              height: 40px;
+              position: absolute;
+              border-style: solid !important;
+              border-radius: 6px 0px 0px 6px;
+              border: 2px;
+              border-color: #b3b3b3;
+              border-right: none !important;
+
+
+              i {
+                font-size: 23px;
+                color: #999;
+                position: absolute;
+                top: 8px;
+                left: 7px;
+              }
+            }
+
+            p {
+              margin: 0;
+              padding: 0;
+              color: red;
+              font-family: roboto;
+              font-weight: 500;
+            }
+          }
+
+          .inputError {
+            padding-top: 40px;
+            position: relative;
+            width: 310px;
+            text-align: center;
+            margin: 0 auto;
+            height: 110px;
+
+            .iconContainer {
+              width: 42px;
+              height: 40px;
+              position: absolute;
+              border-style: solid !important;
+              border-radius: 6px 0px 0px 6px;
+              border: 2px;
+              border-color: #DB333F;
+              border-right: none !important;
+
+              i {
+                font-size: 23px;
+                color: #DB333F;
+                position: absolute;
+                top: 8px;
+                left: 7px;
+              }
+            }
+
+            input {
+            width: calc(100% - 60px);
+            height: 24px;
+            border-radius: 0px 6px 6px 0px;
+            font: 16px "Helvetica Neue", helvetica, sans-serif;
+            padding: 8px 10px 8px 6px;
+            color: #DB333F;
+            border-style: solid;
+            border-left: none;
+            border-color: #DB333F;
+            margin-left: 44px;
+            -webkit-appearance: none;
+            }
+          }
+
+          input {
+            width: calc(100% - 60px);
+            height: 24px;
+            border-radius: 0px 6px 6px 0px;
+            font: 16px "Helvetica Neue", helvetica, sans-serif;
+            padding: 8px 10px 8px 6px;
+            color: #444;
+            border: 2px solid #b3b3b3;
+            border-left: none !important;
+            margin-left: 44px;
+            -webkit-appearance: none;
+          }       
+        }
+
+        .buttonsContainer {
+
+          a {
+            display: none;
+          }
+
+          .button {
+            &:after {
+              content:"Email new password";
+            }
+            width: 200px;
+            height: 40px;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 20px;
+            cursor: pointer;
+            margin: 0 auto;
+            border: none;
+          }
+        }  
+      }
+    }
+  }
+
+
+  @media screen and (max-width: $breakBig) {
+
+    .inner {
+      width: auto;
+      padding: 5px 0;
+
+      h2 {
+
+        .hidden {
+          display: none;
+        }
+      }
+
+      p {
+        text-align: center;
+        margin: 1.5em 20px 0 20px;
+      }
+
+      .lockContainer {
+        height: 120px;
+        width: 120px;
+        margin: 30px auto 0 auto;
+
+        img {
+          margin-top: 20px;
+          height: 71px;
+          width: 51px;
+        }
+      }
+
+      .formContainer {
+        
+        form {
+
+          fieldset {
+
+            .inputContainer {
+              width: auto;
+              max-width: 400px;
+              margin: auto;
+              padding: 40px 20px 0 20px;
+            }
+          }
+
+          .buttonsContainer {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            background: #f1f1f1;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+
+            a {
+              color: $textIputTextColor;
+              display: block;
+              margin: auto;
+              font-size: 16px;
+            }
+
+            .button {
+              
+              &:after {
+                content:"Re-send email";
+              }
+
+              width: 155px;
+              height: 33px;
+              margin: auto;
+            }
+          }          
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakMedium) {
+
+    .inner {
+
+      p {
+        text-align: justify;
+        margin: 1.5em 20px 0 20px;
+      }
+
+      .formContainer {
+
+        .inputContainer {
+          width: auto;
+          max-width: 310px;
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+}

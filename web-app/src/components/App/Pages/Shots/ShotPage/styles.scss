@@ -1,0 +1,396 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mediaQueries';
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+
+  .content {
+    display: flex;
+    width: 802px;
+    margin: 0 auto;
+    margin-top: 54px;
+    margin-bottom: 30px;
+
+    .leftContent {
+      width: 570px;
+
+      .shotImage {
+        width: 100%;
+      }
+
+      .thumbnails {
+
+        img {
+          width: 32%;
+          margin-right: 2%;
+          margin-top: 30px;
+        }
+
+        img:nth-child(3n+3) {
+          margin-right: 0;
+        }
+      }
+
+      .infoCard {
+        height: 74px;
+        margin: 25px 0;
+
+        .userInfo {
+          float: left;
+          margin-top: 6px;
+
+          .userPhoto {
+            border-radius: 50%;
+            overflow: hidden;
+            float: left;
+            width: 68px;
+            height: 68px;
+
+            img {
+              width: 68px;
+            }
+          }
+
+          .paintedByBox {
+            float: left;
+            line-height: 45px;
+            padding-left: 6px;
+
+            .paintedByTitle {
+              display: block;
+              line-height: 13px;
+              font-size: 20px;
+              padding: 8px 0 6px 6px;
+              color: #25282A;
+              font-weight: 500px;
+            }
+
+            .paintedByName {
+              display: block;
+              line-height: 10px;
+              padding: 4px 0 6px 6px;
+              color: #9EA2A2;
+              font-weight: 500;
+              font-size: 16px;
+
+              b {
+                color: #C8102E;
+              }
+            }
+          }
+        }
+
+        .statsInfo {
+          float: right;
+          line-height: 45px;
+          font-size: 14px;
+          color: #9EA2A2;
+
+          .viewsContainer, .likesContainer, .commentsContainer {
+            float: left;
+            margin-right: 10px;
+
+            span:first-child {
+              line-height: 45px;
+              vertical-align: middle;
+              margin-right: 5px;
+            }
+
+            i {
+              font-size: 20px;
+              line-height: 45px;
+              vertical-align: middle;
+              display: inline-block;
+            }
+
+            .statsBorder {
+              border-right: 1px solid #E2E2E2;
+
+              &::after {
+                content: "\00a0";
+              }
+            }
+          }
+
+          .viewsContainer {
+
+            i {
+              padding-top: 3px;
+            }
+          }
+
+          .likesContainer {
+            cursor: pointer;
+
+            i {
+              padding-top: 2px;
+            }
+          }
+
+          .commentsContainer {
+            margin-right: 0;
+
+            i {
+              padding-top: 3px;
+            }
+          }
+        }
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 20px;
+        color: #54585A;
+        margin-bottom: 25px;
+      }
+
+      .tagSocialContainer {
+        border-top: solid 1px $separatorBorderColor;
+        padding-top: 14px;
+        color: $textColorGrey;
+
+        .tagContainer {
+           float: left;
+
+          .tagName {
+            font-size: 16px;
+
+            b {
+              font-weight: 500;
+            }
+          }
+
+          .reportImage {
+            margin-top: 10px;
+
+            a {
+              color: $textColorGrey;
+              text-decoration: none;
+            }
+          }
+        }
+
+        .shareContainer {
+          float: right;
+          font-size: 16px;
+          padding-top: 4px;
+          color: $textColorGrey;
+          line-height: 22px;
+
+          span {
+            vertical-align: top;
+            line-height: 22px;
+            display: inline-block;
+          }
+
+          .facebookButton {
+            display: inline-block;
+            font-size: 22px;
+            margin-left: 6px;
+            line-height: 22px;
+            cursor: pointer;
+          }
+
+          .twitterButton {
+            display: inline-block;
+            font-size: 22px;
+            margin-left: 6px;
+            line-height: 22px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .rightContent {
+      width: 200px;
+      margin-left: 32px;
+
+      .moreThumbsContainer {
+        border-color: $separatorBorderColor;
+        border-style: solid;
+        border-width: 1px 0;
+        padding: 10.5px 0 11.5px 0;
+
+        p {
+          color: $textColorBlack;
+          font-size: 16px;
+          line-height: 16px;
+          margin-bottom: 12px;
+          text-align: center;
+
+          b {
+            color: $textColorRed;
+            font-weight: 500;
+          }
+        }
+
+        li {
+          margin-bottom: 15px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakBig) {
+
+    .content {
+      width: auto;
+      margin: 0;
+
+      .leftContent {
+        margin: 0 auto;
+
+        .thumbnails {
+          margin: 0 5px;
+
+          img {
+            margin-top: 9px;
+          }
+        }
+
+        .infoCard {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          margin: 10px 0;
+
+          .statsInfo {
+            float: none;
+            display: flex;
+            flex-direction: row;
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            height: 31px;
+            position: relative;
+
+            .viewsContainer {
+              float: none;
+              margin-right: 0;
+              height: 17px;
+              width: 33%;
+              position: absolute;
+              text-align: center;
+              bottom: 22px;
+
+              i {
+                padding-top: 2px;
+              }
+
+              span.statsBorder {
+                border-right: 1px solid #E2E2E2;
+                position: absolute;
+                height: 68%;
+                top: 18px;
+                left: 67%;
+                width: 33%;
+              }
+            }
+
+            .likesContainer {
+              right: 33%;
+              float: none;
+              margin-right: 0;
+              height: 17px;
+              width: 33%;
+              position: absolute;
+              text-align: center;
+              bottom: 22px;
+
+              .statsBorder {
+                border-right: 1px solid #E2E2E2;
+                position: absolute;
+                height: 68%;
+                top: 18px;
+                left: 67%;
+                width: 33%;
+                padding: 0;
+              }
+
+              span {
+                padding-top: 2px;
+              }
+
+              i {
+                padding-top: 0;
+              }
+            }
+
+            .commentsContainer {
+              left: 66%;
+              float: none;
+              margin-right: 0;
+              height: 17px;
+              width: 33%;
+              position: absolute;
+              text-align: center;
+              bottom: 22px;
+
+              i {
+                padding-top: 2px;
+              }
+            }
+          }
+          .userInfo {
+            float: none;
+            margin: 6px 20px 0 20px;
+
+            .paintedByBox {
+
+              span.paintedByTitle, .paintedByName {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+
+        .description {
+          margin: 10px 20px 25px 20px;
+
+          span {
+            font-size: 13px;
+          }
+        }
+
+        .tagSocialContainer {
+
+          .tagContainer {
+            margin-left: 20px;
+
+            span.tagName {
+              font-size: 10px;
+            }
+
+            .reportImage {
+              font-size: 10px;
+            }
+          }
+
+          .shareContainer {
+            margin-right: 20px;
+            padding-top: 15px;
+
+            span {
+              font-size: 10px;
+            }
+            .facebookButton {
+              font-size: 18px;
+            }
+            .twitterButton {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+
+      .rightContent {
+        display: none;
+      }
+    }
+  }
+}

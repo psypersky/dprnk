@@ -1,0 +1,21 @@
+@import '../../../../styles/mediaQueries';
+
+.wrapper {
+  background: #FFFFFF;
+  height: 100%;
+  padding-bottom: 150px;
+
+  .inner {
+    width: 482px;
+    margin: 0 auto 0 auto;
+    padding-top: 42px;
+  }
+
+  @media screen and (max-width: $breakBig) {
+    padding-bottom: 20px;
+    .inner {
+      width: auto;
+      padding: 0;
+    }
+  }
+}

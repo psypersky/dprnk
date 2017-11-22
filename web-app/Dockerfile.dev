@@ -1,0 +1,24 @@
+FROM node:8.6
+
+# dumb-init acts as PID 1 and immediately spawns your command as a child process, taking care to properly handle and forward signals as they are received.
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
+RUN dpkg -i dumb-init_*.deb
+
+# Set Home env, this is where our app is going to live
+ENV HOME=/usr/app
+
+# Change directory so that our commands run inside this new directory
+WORKDIR $HOME/src
+
+# Copy the dependencies description and set permissions to app
+COPY package.json $HOME/src
+# RUN chown -R app:app $HOME/*
+
+# Install and Cache npm packages
+RUN npm install
+
+# Expose the port the app runs in
+EXPOSE 4000
+
+# Runs "/usr/bin/dumb-init -- /my/script --with --args"
+ENTRYPOINT ["/usr/bin/dumb-init", "--", "./docker-entrypoint-dev.sh"]

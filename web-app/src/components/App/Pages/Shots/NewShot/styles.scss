@@ -1,0 +1,604 @@
+@import 'app/styles/colors';
+@import 'app/styles/mediaQueries';
+
+.wrapper {
+  height: 100%;
+
+  .content {
+    height: 100%;
+    width: 1024px;
+    margin: 50px auto 0;
+
+    .shotContainer {
+      float: left;
+      width: 570px;
+      height: 420px;
+      position: relative;
+      z-index: 1;
+      background: #f1f1f1;
+
+      /** Main image box **/
+      .shotContent {
+        height: 420px;
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        // background: $formLightBackground;
+        box-sizing: border-box;
+
+        .shotImg {
+          border: dashed 2px; //$labelColor;
+          box-sizing: border-box;
+          height: 100%;
+          overflow: hidden;
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+
+          .dropZone{
+            height: 100%;
+            position: relative;
+            text-align: center;
+
+            i {
+              display: block;
+              font-size: 2em;
+            }
+
+            h3 {
+              // color: $labelColor;
+              font-size: 20px;
+              font-weight: 500;
+              margin-top: -2em;
+              position: absolute;
+              top: 46%;
+              width: 100%;
+              color: $textIputTextColor;
+
+              .uploadText {
+                &::before {
+                  content: "Drag photos of your";
+                  display: block;
+                }
+                &::after {
+                  content: "painted mini here to upload";
+                  display: block;
+                }
+              }
+            }
+
+            p {
+              bottom: 1.8em;
+              font-size: 16px;
+              position: absolute;
+              text-align: center;
+              width: 100%;
+              color: $textIputTextColor;
+
+              .redLink {
+                color: $textIputTextColor;
+                cursor: pointer;
+                text-decoration: underline;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+
+      /** Thumbnail images **/
+
+      .thumbnailBox {
+        padding-top: 20px;
+        background: #fff;
+
+        ul.thumbnails {
+          position: relative;
+
+          &:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+          }
+
+          li {
+            // background: $formLightBackground;
+            border: none;
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 0 2% 0 0;
+            padding: 0 0 10px 0;
+            position: relative;
+            width: 32%;
+
+            &:nth-child(3n+3) {
+              float: right;
+              margin-right: 0;
+            }
+            .thumbnailContainer {
+              width: 100%;
+              position: relative;
+
+              figure {
+                background-position: center;
+                background-size: cover;
+                box-sizing: border-box;
+                padding-bottom: 75%;
+                text-align: center;
+                width: 100%;
+
+                &.uploading {
+                  filter: brightness(50%);
+                }
+
+                i {
+                  display: block;
+                  font-size: 3em;
+                }
+              }
+
+              .loadingContainerThumb {
+                position: absolute;
+                height: 56px;
+                top: calc(50% - 28px);
+                left: calc(50% - 20px);
+                text-align: center;
+                z-index: 9999;
+
+                .loadingCircleThumb {
+                  width: 43px;
+                  height: 41px;
+                  display: block;
+                }
+
+                span {
+                  font-size: 10px;
+                  text-align: center;
+                  line-height: 20px;
+                  color: #F1F1F1;
+                  margin: auto 0;
+                }
+              }
+            }
+
+            a {
+              img {
+                max-width: 72px;
+                box-shadow: 0 0 1px rgba(0,0,0,0.35);
+              }
+            }
+          }
+        }
+      }
+
+      /** Upload attachments **/
+      .backgroundContainer {
+        float: left;
+        width: 570px;
+        height: 214px;
+        position: relative;
+        z-index: 1;
+        background: #f1f1f1;
+
+        .uploadAttachmentContainer {
+          height: 214px;
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+
+          .uploadAttachments {
+            border: dashed 2px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+
+            .uploadingMsg {
+              margin-top: 10px;
+              display: block;
+            }
+
+            .attachmentsForm {
+              text-align: center;
+              width: 100%;
+              height: 100%;
+              position: relative;
+
+              label {
+                bottom: 0;
+                cursor: pointer;
+                left: 0;
+                position: absolute;
+                top: calc(50% - 65px);
+
+                i {
+                  font-size: 45px;
+                  color: $textIputTextColor;
+                }
+
+                span {
+                  font-size: 16px;
+                  line-height: 20px;
+                  color: $textIputTextColor;
+
+                  .attachmentsUploadText {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #9EA2A2;
+
+                    &::after {
+                      content: "Drag more photos here to upload";
+                    }
+                  }
+
+                  .clickHere {
+                    font-weight: 500;
+                    text-decoration: underline;
+                    color: $textIputTextColor;
+                  }
+                }
+
+                input[type=file] {
+                  opacity: 0;
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              button {
+                padding: 5px 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .shotUploaded {
+      height: 100%;
+      background: none;
+
+      .shotContent {
+        padding: 0;
+        height: auto;
+        margin: 0;
+
+        .shotImg {
+          border: none;
+        }
+      }
+    }
+
+    .shotUploading {
+      height: auto;
+
+      .shotContent {
+        padding: 0;
+        height: auto;
+
+        .shotImg {
+          border: none;
+          position: relative;
+
+          .loadingContainer {
+            position: absolute;
+            height: 95px;
+            top: calc(50% - 47px);
+            left: calc(50% - 35px);
+            text-align: center;
+            z-index: 9999;
+
+            .loadingCircle {
+              width: 70px;
+              height: 70px;
+              display: block;
+            }
+
+            span {
+              font-size: 16px;
+              text-align: center;
+              line-height: 20px;
+              color: #F1F1F1;
+              margin: auto 0;
+            }
+          }
+
+          .imgPreview {
+            filter: brightness(50%);
+            height: 100%;
+          }
+        }
+      }
+    }
+
+
+    /** Form **/
+    .shotFormContainer {
+      float: right;
+      width: 420px;
+
+      .Title {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 16px;
+          color: #54585A;
+          padding-bottom: 3px;
+        }
+
+        input {
+          border: 2px solid #B3B3B3;
+          border-radius: 6px;
+          font: 16px "Roboto", Helvetica, Arial, sans-serif;
+          padding: 0 0 0 12px;
+          margin: 0;
+          color: #444;
+          outline: none;
+          width: 404px;
+          height: 34px;
+        }
+      }
+
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        :global .Select {
+
+          &.is-open .Select-control {
+            outline-width: 0px;
+            background: rgb(255, 255, 255);
+          }
+
+          .Select-control {
+            @include gradientBackground(#FDFDFD, #EBECEC);
+
+            box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 2px inset;
+            color: rgb(51, 51, 51);
+            font-size: 16px;
+            vertical-align: middle;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+            border-radius: 6px;
+
+            .Select-value-label, &.is-pseudo-focused .Select-value-label {
+              color: #54585A !important;
+            }
+
+            .Select-placeholder {
+              color: $textInputBorderColor;
+            }
+          }
+        }
+
+        &:nth-child(1n+2) {
+          margin-top: 20px;
+
+          label {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 16px;
+            color: #54585A;
+            padding-bottom: 3px;
+          }
+        }
+
+        textarea {
+          border: 2px solid #B3B3B3;
+          border-radius: 6px;
+          font: 13px "Roboto", Helvetica, Arial, sans-serif;
+          padding: 10px;
+          margin: 0;
+          color: #444;
+          outline: none;
+          width: 396px;
+          height: 126px;
+        }
+      }
+
+      fieldset.submitSet {
+        display: block;
+
+        .button1 {
+          display: inline-block;
+          font-size: 16px;
+          width: 320px;
+          height: 50px;
+          margin-right: 20px;
+          border-radius: 45px;
+          margin-top: 25px;
+        }
+
+        .button2 {
+          display: inline-block;
+          color: $textIputTextColor;
+          background: none;
+          border: none;
+          text-decoration: underline;
+          font-size: 16px;
+        }
+      }
+
+
+      p {
+        color: $textIputTextColor;
+        font-size: 13px;
+        margin: 15px 103px 0 0;
+        text-align: center;
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakBig) {
+      padding: 0;
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 20px auto 0 auto;
+
+      .shotContainer {
+        float: none;
+        margin: 0 auto 20px auto;
+
+        .shotContent {
+
+          .shotImg {
+
+            .dropZone {
+              h3 {
+                .uploadText {
+                  &::before {
+                    content: "Tap here to upload photos of";
+                    display: block;
+                  }
+                  &::after {
+                    content: "your painted mini";
+                    display: block;
+                  }
+                }
+              }
+
+              .uploadClick {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .backgroundContainer {
+          float: none;
+
+            .uploadAttachmentContainer {
+              .uploadAttachments {
+                .attachmentsForm {
+                  label {
+                    span {
+                      .attachmentsUploadText {
+                        &::after {
+                          content: "Tap here to upload more photos";
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+          .attachmentsClickHere {
+            display: none;
+          }
+        }
+      }
+
+      .shotUploaded {
+        height: auto;
+        background: none;
+      }
+
+      .shotUploading {
+        height: auto;
+        background: none;
+
+      }
+
+      .shotFormContainer {
+        margin: 0 auto;
+        float: none;
+        width: 570px;
+
+        .Title {
+          width: inherit;
+
+          input {
+            width: 100%;
+            box-sizing: border-box;
+
+          }
+        }
+
+        fieldset {
+
+          textarea {
+            width: 100%;
+            box-sizing: border-box;
+          }
+        }
+
+        .submitSet {
+          justify-content: space-between;
+        }
+
+        .footer {
+          padding-top: 4rem;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakMedium) {
+      margin: 4px auto 0 auto;
+
+      .shotContainer {
+        min-width: 300px;
+        width: auto;
+        margin: 0 4px 20px 4px;
+        height: 300px;
+
+        .shotContent {
+          margin: 0;
+          height: 100%;
+        }
+
+        .backgroundContainer {
+          width: 100%;
+
+        }
+      }
+
+      .shotUploaded {
+        height: auto;
+
+        .shotContent {
+          height: auto;
+        }
+      }
+
+      .shotUploading {
+        height: auto;
+
+      }
+
+      .shotFormContainer {
+        min-width: 280px;
+        width: auto;
+        margin: 0 20px;
+
+        fieldset.submitSet {
+
+          .button1 {
+            min-width: 187px;
+            width: 50%;
+          }
+
+          .button2 {
+           padding: 24px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

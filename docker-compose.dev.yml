@@ -22,7 +22,7 @@ services:
     tty: true # Allocate a pseudo-tty
 
   api: # name of the service
-    image: sfb-api-image # Name the build image with this name
+    image: sfb-api-image # Name the build image with this name // IMAGE DOES NOT EXISTS CHECK DOCS
     container_name: sfb-api-container # the container will be accesible in the network by the same host name
     build:
       context: ./sfb-api # specify the directory of the Dockerfile

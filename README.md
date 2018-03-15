@@ -1,5 +1,5 @@
 
-# PRNK
+# DPRNK
 
 [![Discord](https://img.shields.io/discord/102860784329052160.svg)](https://discord.gg/UUZNp5h)
 
@@ -22,6 +22,6 @@ When using docker for development a postgreSQL container is created with the ini
 
 ```
 clone repo
-cd prnk
+cd dprnk
 docker-compose -f docker-compose.dev up
 ```

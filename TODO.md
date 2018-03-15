@@ -1,6 +1,6 @@
 # Things to do!
 
-## Week one goal: Set up a development, staging and production environment for a server, and a server side rendering service.
+## First working mockup √
 
 - API-Server Development √
   - Docker for API Server √
@@ -8,12 +8,12 @@
   - Koa.js example route √
   - Connection to database √
 
-- Database Server Development
+- Database Server Development √
   - Docker for database server √
   - Initial Schema √
   - Development Data √
 
-- Web SPA & render server
+- Web SPA & render server √
   - Create a Cerebral App √
   - Setup hypernova as a microservice for rendering √
     - Setup docker for server development √
@@ -32,9 +32,11 @@
   - Fix js app bundle serving √
   - Test client side rendering √
 
-- Create first documentation version
-- Commit first documentation version
-- Create and push repository to github
+- Create first documentation version √
+- Commit first documentation version √
+- Create and push repository to github √
+
+## V1.0.0
 
 - Check docker-compose
 - Check each docker file
